@@ -1,0 +1,13 @@
+[package]
+name = "rael"
+version = "0.1.0"
+edition = "2021"
+description = "A simple terminal rendering engine for creating text-based UIs and games."
+license = "MIT"
+repository = "https://github.com/your-username/rael"
+homepage = "https://github.com/your-username/rael"
+keywords = ["terminal", "tui", "console", "graphics", "renderer"]
+categories = ["command-line-utilities", "games"]
+
+[dependencies]
+crossterm = "0.27"

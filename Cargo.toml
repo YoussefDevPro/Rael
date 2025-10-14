@@ -1,13 +1,13 @@
 [package]
 name = "rael"
-version = "0.0.1"
+version = "0.1.1"
 edition = "2021"
 description = "A simple terminal rendering engine for creating text-based UIs and games."
 license = "MIT"
-repository = "https://github.com/your-username/rael"
-homepage = "https://github.com/your-username/rael"
+repository = "https://github.com/YoussefDevPro/rael"
+homepage = "https://github.com/YoussefDevPro/rael"
 keywords = ["terminal", "tui", "console", "graphics", "renderer"]
 categories = ["command-line-utilities", "games"]
 
 [dependencies]
-crossterm = "0.27"
+crossterm = "0.29.0"

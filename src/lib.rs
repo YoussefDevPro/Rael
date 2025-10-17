@@ -42,6 +42,10 @@ pub struct Canvas {
     pub width: usize,
     /// The height of the canvas in terminal character rows.
     pub height: usize,
+    /// The final width of the canvas in terminal character columns.
+    pub final_width: usize,
+    /// The final height of the canvas in terminal character rows.
+    pub final_height: usize,
     /// Stores the 3D grid of half-block pixels. Indexed by (x, y_half_block, z_layer).
     pixels: Vec<TerminalPixel>,
     /// Stores the 2D grid of currently composited terminal cells. Used for rendering.
@@ -94,6 +98,8 @@ impl Canvas {
         Self {
             width,
             height,
+            final_width: width,
+            final_height: height * 2,
             pixels: vec![initial_pixel; total_half_block_pixels],
             composited_cells: vec![initial_composited_cell; total_terminal_cells],
             previous_composited_cells: vec![different_composited_cell; total_terminal_cells],

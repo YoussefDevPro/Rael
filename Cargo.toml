@@ -1,6 +1,6 @@
 [package]
 name = "rael"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 description = "A simple terminal rendering engine for creating text-based UIs and games."
 license = "MIT"

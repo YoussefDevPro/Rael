@@ -195,9 +195,15 @@ impl Canvas {
 
                 let terminal_cell_index = terminal_cell_y * self.width + terminal_cell_x;
 
-                // Compare with previous composited cell
-                if current_composited_cell != self.previous_composited_cells[terminal_cell_index] {
-                    buffer.push_str(&format!("\u{1b}[{};{}H", terminal_cell_y + 1, terminal_cell_x + 1));
+                buffer.push_str(&format!("\u{1b}[{};{}H", terminal_cell_y + 1, terminal_cell_x + 1));
+                if current_top_color == current_bottom_color {
+                    buffer.push_str(&format!(
+                        "\u{1b}[38;2;{};{};{}m█",
+                        current_top_color.r,
+                        current_top_color.g,
+                        current_top_color.b
+                    ));
+                } else {
                     buffer.push_str(&format!(
                         "\u{1b}[48;2;{};{};{}m\u{1b}[38;2;{};{};{}m▄",
                         current_top_color.r,
